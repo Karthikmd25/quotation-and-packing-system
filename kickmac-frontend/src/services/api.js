@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://quotation-and-packing-system.onrender.com/api",
   headers: {
     "Content-Type": "application/json",
   },
@@ -24,7 +24,6 @@ api.interceptors.request.use(
 
 api.interceptors.response.use(
   (response) => response,
-
   (error) => {
     if (error.response?.status === 401) {
       console.warn(
@@ -35,11 +34,7 @@ api.interceptors.response.use(
       localStorage.removeItem("managerToken");
       localStorage.removeItem("manager");
 
-      // Only redirect if the user is actually on a protected manager/packing page
-      const protectedPaths = [
-        "/manager",
-        "/packing",
-      ];
+      const protectedPaths = ["/manager", "/packing"];
 
       const isProtectedPage = protectedPaths.some((path) =>
         window.location.pathname.startsWith(path)
