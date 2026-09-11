@@ -1,6 +1,6 @@
 import express from "express";
 
-import { protectManager } from "../middleware/authMiddleware.js";
+import { protectPacking } from "../middleware/authMiddleware.js";
 
 import {
   createPackingOrder,
@@ -19,8 +19,7 @@ const router = express.Router();
    Protect all packing routes
 ========================================================= */
 
-router.use(protectManager);
-
+router.use(protectPacking);
 /* =========================================================
    CREATE PACKING ORDER
    POST /api/packing
