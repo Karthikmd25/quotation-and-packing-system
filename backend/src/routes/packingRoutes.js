@@ -1,6 +1,9 @@
 import express from "express";
 
-import { protectPacking } from "../middleware/authMiddleware.js";
+import {
+  protectManager,
+  protectPacking,
+} from "../middleware/authMiddleware.js";
 
 import {
   createPackingOrder,
@@ -15,89 +18,102 @@ import {
 
 const router = express.Router();
 
-/* =========================================================
-   Protect all packing routes
-========================================================= */
+// =========================================================
+// CREATE PACKING ORDER
+// POST /api/packing
+//
+// Manager creates the packing order after quotation approval.
+// =========================================================
 
-router.use(protectPacking);
-/* =========================================================
-   CREATE PACKING ORDER
-   POST /api/packing
-========================================================= */
+router.post(
+  "/",
+  protectManager,
+  createPackingOrder
+);
 
-router.post("/", createPackingOrder);
+// =========================================================
+// GET ALL PACKING ORDERS
+// GET /api/packing
+//
+// Packing department sees available packing orders.
+// =========================================================
 
-/* =========================================================
-   GET ALL PACKING ORDERS
-   GET /api/packing
-========================================================= */
+router.get(
+  "/",
+  protectPacking,
+  getPackingOrders
+);
 
-router.get("/", getPackingOrders);
+// =========================================================
+// GET SINGLE PACKING ORDER
+// GET /api/packing/:id
+//
+// Packing department works on the order.
+// =========================================================
 
-/* =========================================================
-   GET SINGLE PACKING ORDER
-   GET /api/packing/:id
-========================================================= */
+router.get(
+  "/:id",
+  protectPacking,
+  getPackingOrderById
+);
 
-router.get("/:id", getPackingOrderById);
-
-/* =========================================================
-   UPDATE PACKING WORKFLOW
-   PUT /api/packing/:id/workflow
-
-   Used for:
-   - Picking
-   - Checking
-   - Packing
-========================================================= */
+// =========================================================
+// UPDATE PACKING WORKFLOW
+// PUT /api/packing/:id/workflow
+//
+// Used for:
+// - Picking
+// - Checking
+// - Packing
+// =========================================================
 
 router.put(
   "/:id/workflow",
+  protectPacking,
   updatePackingWorkflow
 );
 
-/* =========================================================
-   MARK DISPATCH LABEL PRINTED
-   PATCH /api/packing/:id/dispatch-label
-========================================================= */
+// =========================================================
+// MARK DISPATCH LABEL PRINTED
+// PATCH /api/packing/:id/dispatch-label
+// =========================================================
 
 router.patch(
   "/:id/dispatch-label",
+  protectPacking,
   markDispatchLabelPrinted
 );
 
-/* =========================================================
-   MARK BAG DISPATCHED
-   PATCH /api/packing/:id/dispatch
-
-   The bag can be dispatched before the transport
-   slip is uploaded.
-========================================================= */
+// =========================================================
+// MARK BAG DISPATCHED
+// PATCH /api/packing/:id/dispatch
+// =========================================================
 
 router.patch(
   "/:id/dispatch",
+  protectPacking,
   markBagDispatched
 );
 
-/* =========================================================
-   SAVE TRANSPORT SLIP
-   POST /api/packing/:id/transport-slip
-
-   Transport slip can be uploaded later.
-========================================================= */
+// =========================================================
+// SAVE TRANSPORT SLIP
+// POST /api/packing/:id/transport-slip
+// =========================================================
 
 router.post(
   "/:id/transport-slip",
+  protectPacking,
   saveTransportSlip
 );
 
-/* =========================================================
-   MARK DELIVERED
-   PATCH /api/packing/:id/delivered
-========================================================= */
+// =========================================================
+// MARK DELIVERED
+// PATCH /api/packing/:id/delivered
+// =========================================================
 
 router.patch(
   "/:id/delivered",
+  protectPacking,
   markDelivered
 );
 
