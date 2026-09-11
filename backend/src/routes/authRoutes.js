@@ -1,8 +1,30 @@
 import express from "express";
-import { managerLogin } from "../controllers/authController.js";
+
+import {
+  managerLogin,
+  packingLogin,
+} from "../controllers/authController.js";
 
 const router = express.Router();
 
-router.post("/manager/login", managerLogin);
+// =========================================================
+// MANAGER LOGIN
+// POST /api/auth/manager/login
+// =========================================================
+
+router.post(
+  "/manager/login",
+  managerLogin
+);
+
+// =========================================================
+// PACKING LOGIN
+// POST /api/auth/packing/login
+// =========================================================
+
+router.post(
+  "/packing/login",
+  packingLogin
+);
 
 export default router;

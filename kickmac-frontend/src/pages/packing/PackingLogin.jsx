@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import api from "../../services/api";
 import "./PackingLogin.css";
 
 function PackingLogin() {
@@ -29,43 +29,59 @@ function PackingLogin() {
       setLoading(true);
 
       // =======================================================
-      // PACKING LOGIN
-      // =======================================================
-      //
-      // Current packing login credentials:
-      // Username: packing
-      // Password: Packing@123
-      //
+      // REAL PACKING LOGIN
       // =======================================================
 
-      if (
-        username.trim().toLowerCase() === "packing" &&
-        password === "Packing@123"
-      ) {
-        sessionStorage.setItem(
-          "kickmac_packing_login",
-          "true"
+      const response = await api.post("/auth/packing/login", {
+        username: username.trim(),
+        password: password,
+      });
+
+      // =======================================================
+      // CHECK LOGIN RESPONSE
+      // =======================================================
+
+      if (!response.data?.success || !response.data?.token) {
+        throw new Error(
+          response.data?.message || "Packing login failed."
         );
-
-        console.log("Packing login successful");
-
-        // =====================================================
-        // GO TO PACKING DASHBOARD
-        // =====================================================
-
-        navigate("/packing", {
-          replace: true,
-        });
-
-        return;
       }
 
-      throw new Error("Invalid username or password.");
+      // =======================================================
+      // SAVE PACKING TOKEN
+      // =======================================================
+
+      localStorage.setItem(
+        "packingToken",
+        response.data.token
+      );
+
+      // =======================================================
+      // SAVE PACKING USER
+      // =======================================================
+
+      if (response.data.packingUser) {
+        localStorage.setItem(
+          "packingUser",
+          JSON.stringify(response.data.packingUser)
+        );
+      }
+
+      console.log("Packing login successful");
+
+      // =======================================================
+      // GO TO PACKING DASHBOARD
+      // =======================================================
+
+      navigate("/packing", {
+        replace: true,
+      });
     } catch (err) {
       console.error("Packing login error:", err);
 
       setError(
-        err.message ||
+        err.response?.data?.message ||
+          err.message ||
           "Invalid username or password."
       );
     } finally {
@@ -112,7 +128,6 @@ function PackingLogin() {
           {/* USERNAME */}
 
           <div className="packing-login-field">
-
             <label htmlFor="packing-username">
               Username
             </label>
@@ -128,13 +143,11 @@ function PackingLogin() {
               autoComplete="username"
               disabled={loading}
             />
-
           </div>
 
           {/* PASSWORD */}
 
           <div className="packing-login-field">
-
             <label htmlFor="packing-password">
               Password
             </label>
@@ -150,7 +163,6 @@ function PackingLogin() {
               autoComplete="current-password"
               disabled={loading}
             />
-
           </div>
 
           {/* LOGIN BUTTON */}
@@ -160,11 +172,8 @@ function PackingLogin() {
             className="packing-login-button"
             disabled={loading}
           >
-            {loading
-              ? "Signing in..."
-              : "Login"}
+            {loading ? "Signing in..." : "Login"}
           </button>
-
         </form>
 
         {/* =====================================================
