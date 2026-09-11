@@ -1,0 +1,116 @@
+.manager-login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #f4f5f7;
+}
+
+.manager-login-card {
+  width: 100%;
+  max-width: 430px;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.manager-login-brand {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #111111;
+  margin-bottom: 18px;
+}
+
+.manager-login-card h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 28px;
+  color: #111111;
+}
+
+.manager-login-subtitle {
+  margin: 10px 0 28px;
+  text-align: center;
+  color: #777777;
+  font-size: 14px;
+}
+
+.manager-login-error {
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  background: #ffe8e8;
+  color: #b00020;
+  font-size: 14px;
+}
+
+.manager-login-field {
+  margin-bottom: 20px;
+}
+
+.manager-login-field label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333333;
+}
+
+.manager-login-field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #d5d5d5;
+  border-radius: 9px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.manager-login-field input:focus {
+  border-color: #111111;
+}
+
+.manager-login-button {
+  width: 100%;
+  border: none;
+  border-radius: 9px;
+  padding: 14px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.manager-login-button:hover {
+  background: #2a2a2a;
+}
+
+.manager-login-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.manager-login-footer {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #999999;
+}
+
+@media (max-width: 480px) {
+  .manager-login-card {
+    padding: 28px 22px;
+  }
+
+  .manager-login-card h1 {
+    font-size: 24px;
+  }
+}

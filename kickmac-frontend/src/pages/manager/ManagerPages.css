@@ -1,0 +1,151 @@
+.manager-subpage {
+  min-height: 100vh;
+  background: #f5f6f8;
+}
+
+.subpage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  color: #fff;
+  padding: 20px 32px;
+}
+
+.subpage-logo {
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+.subpage-title {
+  font-size: 13px;
+  color: #ccc;
+}
+
+.subpage-back-btn {
+  color: #fff;
+  border: 1px solid #555;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.subpage-back-btn:hover {
+  background: #222;
+}
+
+.subpage-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.subpage-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.subpage-title-row h2 {
+  margin: 0 0 4px 0;
+}
+
+.subpage-title-row p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.subpage-count {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 700;
+}
+
+.loading-box,
+.empty-box,
+.error-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 32px;
+  text-align: center;
+  color: #555;
+}
+
+.error-box {
+  border-color: #f5c2c2;
+  background: #fff5f5;
+  color: #a33;
+}
+
+.error-box button {
+  display: block;
+  margin: 12px auto 0;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #a33;
+  background: #fff;
+  color: #a33;
+  cursor: pointer;
+}
+
+.empty-box > div:first-child {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.subpage-table-wrapper {
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.subpage-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.subpage-table th {
+  text-align: left;
+  padding: 14px 16px;
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.subpage-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status-draft {
+  background: #fff3cd;
+  color: #8a6d00;
+}
+
+.status-dispatched {
+  background: #d4edda;
+  color: #1e7e34;
+}
+
+.status-packing_created,
+.status-created {
+  background: #e2e3fb;
+  color: #4b3fa7;
+}

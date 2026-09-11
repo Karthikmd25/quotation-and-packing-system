@@ -1,0 +1,1195 @@
+/* =========================================================
+   PACKING PICKING PAGE
+========================================================= */
+
+.packing-picking-page {
+  min-height: 100vh;
+  background: #f4f5f7;
+  color: #111111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.packing-picking-header {
+  min-height: 92px;
+  padding: 18px 38px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  background: #111111;
+  color: #ffffff;
+}
+
+.packing-picking-brand {
+  margin-bottom: 4px;
+
+  color: #ff9800;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+.packing-picking-header h1 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.packing-picking-header p {
+  margin: 5px 0 0;
+
+  color: #bbbbbb;
+  font-size: 13px;
+}
+
+.pp-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =========================================================
+   HEADER BUTTONS
+========================================================= */
+
+.pp-home-button,
+.pp-refresh-button {
+  min-height: 40px;
+  padding: 9px 15px;
+  box-sizing: border-box;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pp-home-button {
+  color: #ffffff;
+  background: #111111;
+  border: 1px solid #555555;
+}
+
+.pp-home-button:hover {
+  color: #111111;
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.pp-refresh-button {
+  color: #ffffff;
+  background: #222222;
+  border: 1px solid #444444;
+}
+
+.pp-refresh-button:hover {
+  background: #333333;
+  border-color: #666666;
+}
+
+.pp-home-button:active,
+.pp-refresh-button:active {
+  transform: scale(0.98);
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.packing-picking-content {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 32px 25px 60px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.pp-loading-card {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.06);
+
+  color: #777777;
+}
+
+.pp-loading-card p {
+  margin: 12px 0 0;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pp-spin {
+  animation: ppSpin 1s linear infinite;
+}
+
+@keyframes ppSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   ALERTS
+========================================================= */
+
+.pp-alert {
+  min-height: 48px;
+
+  margin-bottom: 20px;
+  padding: 12px 14px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pp-alert span {
+  flex: 1;
+}
+
+.pp-alert button {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.pp-alert-error {
+  color: #991b1b;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+.pp-alert-error button {
+  color: #991b1b;
+}
+
+.pp-alert-success {
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.pp-alert-success button {
+  color: #166534;
+}
+
+/* =========================================================
+   ORDERS CARD
+========================================================= */
+
+.pp-orders-card {
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.06);
+
+  overflow: hidden;
+}
+
+.pp-section-header {
+  padding: 24px 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.pp-section-header h2 {
+  margin: 0 0 6px;
+
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.pp-section-header p {
+  margin: 0;
+
+  color: #777777;
+  font-size: 13px;
+}
+
+.pp-order-count {
+  flex-shrink: 0;
+
+  padding: 8px 12px;
+
+  color: #333333;
+  background: #f5f5f5;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   ORDER LIST
+========================================================= */
+
+.pp-orders-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.pp-order-row {
+  width: 100%;
+
+  padding: 18px 22px;
+
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns:
+    minmax(280px, 1.5fr)
+    minmax(220px, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 20px;
+
+  text-align: left;
+
+  background: #ffffff;
+
+  border: 0;
+  border-bottom: 1px solid #eeeeee;
+
+  color: #111111;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pp-order-row:last-child {
+  border-bottom: 0;
+}
+
+.pp-order-row:hover {
+  background: #fffaf3;
+
+  box-shadow:
+    inset 4px 0 0 #ff9800;
+}
+
+/* =========================================================
+   ORDER MAIN
+========================================================= */
+
+.pp-order-main {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+.pp-order-icon {
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #e88900;
+  background: #fff7e8;
+
+  border: 1px solid #ffe0a8;
+  border-radius: 10px;
+}
+
+.pp-order-main strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.pp-order-main span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #444444;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pp-order-main small {
+  display: block;
+
+  color: #888888;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   ORDER INFO
+========================================================= */
+
+.pp-order-info {
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+}
+
+.pp-order-info span {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  color: #222222;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pp-order-info b {
+  color: #999999;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   ORDER STATUS
+========================================================= */
+
+.pp-order-status {
+  min-width: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  gap: 7px;
+}
+
+.pp-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 82px;
+
+  padding: 5px 10px;
+
+  box-sizing: border-box;
+
+  color: #92400e;
+  background: #fef3c7;
+
+  border: 1px solid #fcd34d;
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 0.3px;
+}
+
+.pp-open {
+  color: #e88900;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.pp-empty {
+  min-height: 280px;
+
+  padding: 40px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #999999;
+}
+
+.pp-empty svg {
+  margin-bottom: 12px;
+
+  color: #bbbbbb;
+}
+
+.pp-empty h3 {
+  margin: 0 0 7px;
+
+  color: #333333;
+
+  font-size: 17px;
+}
+
+.pp-empty p {
+  margin: 0;
+
+  color: #888888;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.pp-back-button {
+  margin-bottom: 18px;
+
+  padding: 9px 13px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #555555;
+  background: transparent;
+
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.pp-back-button:hover {
+  color: #111111;
+  background: #ffffff;
+  border-color: #bbbbbb;
+}
+
+/* =========================================================
+   SUMMARY CARD
+========================================================= */
+
+.pp-summary-card {
+  margin-bottom: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.06);
+
+  overflow: hidden;
+}
+
+.pp-summary-top {
+  padding: 20px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.pp-label {
+  margin-bottom: 5px;
+
+  color: #999999;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.pp-summary-top h2 {
+  margin: 0;
+
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.pp-summary-grid {
+  padding: 20px 24px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.pp-summary-item {
+  min-width: 0;
+}
+
+.pp-summary-item span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #999999;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pp-summary-item strong {
+  display: block;
+
+  color: #222222;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  line-height: 1.5;
+
+  word-break: break-word;
+}
+
+.pp-address {
+  grid-column: span 2;
+}
+
+/* =========================================================
+   PICKING CARD
+========================================================= */
+
+.pp-picking-card {
+  margin-bottom: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.06);
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.pp-table-header {
+  padding: 20px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.pp-table-header h2 {
+  margin: 0 0 5px;
+
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.pp-table-header p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 12px;
+}
+
+.pp-overall-result {
+  min-width: 105px;
+
+  padding: 7px 12px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  color: #92400e;
+  background: #fef3c7;
+
+  border: 1px solid #fcd34d;
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 900;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.pp-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.pp-table {
+  width: 100%;
+
+  min-width: 950px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+.pp-table th {
+  padding: 12px 13px;
+
+  color: #777777;
+  background: #fafafa;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  text-align: left;
+
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+
+  white-space: nowrap;
+}
+
+.pp-table td {
+  padding: 13px;
+
+  color: #333333;
+
+  border-bottom: 1px solid #eeeeee;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  vertical-align: middle;
+}
+
+.pp-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.pp-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.pp-table tbody tr:hover {
+  background: #fafafa;
+}
+
+/* =========================================================
+   ROW STATES
+========================================================= */
+
+.pp-row-match {
+  background: #fbfffc;
+}
+
+.pp-row-mismatch {
+  background: #fffafa;
+}
+
+.pp-row-pending {
+  background: #fffdf7;
+}
+
+/* =========================================================
+   QUANTITY INPUT
+========================================================= */
+
+.pp-qty-input {
+  width: 85px;
+  height: 38px;
+
+  padding: 7px 9px;
+
+  box-sizing: border-box;
+
+  color: #222222;
+  background: #ffffff;
+
+  border: 1px solid #cccccc;
+  border-radius: 7px;
+
+  outline: none;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  text-align: center;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pp-qty-input:focus {
+  border-color: #ff9800;
+
+  box-shadow:
+    0 0 0 3px rgba(255, 152, 0, 0.12);
+}
+
+.pp-qty-input.pp-match {
+  color: #166534;
+  background: #f0fdf4;
+
+  border-color: #22c55e;
+}
+
+.pp-qty-input.pp-mismatch {
+  color: #b91c1c;
+  background: #fef2f2;
+
+  border-color: #ef4444;
+}
+
+.pp-qty-input.pp-pending {
+  color: #92400e;
+  background: #fffdf7;
+
+  border-color: #fcd34d;
+}
+
+/* =========================================================
+   RESULT BADGES
+========================================================= */
+
+.pp-result {
+  min-width: 88px;
+
+  padding: 5px 9px;
+
+  box-sizing: border-box;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.pp-result-match {
+  color: #15803d;
+  background: #dcfce7;
+
+  border: 1px solid #86efac;
+}
+
+.pp-result-mismatch {
+  color: #b91c1c;
+  background: #fee2e2;
+
+  border: 1px solid #fca5a5;
+}
+
+.pp-result-pending {
+  color: #92400e;
+  background: #fef3c7;
+
+  border: 1px solid #fcd34d;
+}
+
+/* =========================================================
+   SAVE CARD
+========================================================= */
+
+.pp-save-card {
+  min-height: 85px;
+
+  padding: 17px 22px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.pp-save-info {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: #333333;
+}
+
+.pp-save-info > svg {
+  flex-shrink: 0;
+
+  color: #e88900;
+}
+
+.pp-save-info strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.pp-save-info p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+.pp-save-button {
+  min-height: 41px;
+
+  padding: 9px 17px;
+
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  color: #ffffff;
+  background: #15803d;
+
+  border: 1px solid #15803d;
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pp-save-button:hover:not(:disabled) {
+  background: #166534;
+}
+
+.pp-save-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.pp-save-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+  .packing-picking-header {
+    padding: 18px 25px;
+  }
+
+  .packing-picking-content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .pp-order-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .pp-order-info {
+    grid-column: 1;
+  }
+
+  .pp-order-status {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .pp-summary-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .packing-picking-header {
+    min-height: auto;
+
+    padding: 18px;
+
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .packing-picking-header h1 {
+    font-size: 23px;
+  }
+
+  .pp-header-actions {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pp-home-button,
+  .pp-refresh-button {
+    width: 100%;
+  }
+
+  .packing-picking-content {
+    padding: 22px 14px 40px;
+  }
+
+  .pp-section-header {
+    padding: 20px;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .pp-order-count {
+    align-self: flex-start;
+  }
+
+  .pp-order-row {
+    padding: 17px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 15px;
+  }
+
+  .pp-order-info {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+  }
+
+  .pp-order-status {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-between;
+  }
+
+  .pp-summary-top {
+    padding: 18px 19px;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .pp-summary-grid {
+    padding: 18px 19px;
+
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .pp-address {
+    grid-column: auto;
+  }
+
+  .pp-table-header {
+    padding: 18px 19px;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .pp-overall-result {
+    align-self: flex-start;
+  }
+
+  .pp-table th,
+  .pp-table td {
+    padding: 11px 10px;
+  }
+
+  .pp-save-card {
+    padding: 18px;
+
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .pp-save-button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .packing-picking-brand {
+    font-size: 12px;
+  }
+
+  .pp-header-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .pp-order-info {
+    grid-template-columns: 1fr;
+  }
+
+  .pp-alert {
+    align-items: flex-start;
+  }
+
+  .pp-save-info {
+    align-items: flex-start;
+  }
+}

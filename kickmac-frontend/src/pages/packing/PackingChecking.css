@@ -1,0 +1,995 @@
+* {
+  box-sizing: border-box;
+}
+
+.packing-checking-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  color: #172033;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.packing-checking-header {
+  min-height: 90px;
+  padding: 20px 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.packing-checking-brand {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.packing-checking-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.packing-checking-header p {
+  margin: 5px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.packing-checking-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.packing-checking-refresh,
+.packing-checking-home {
+  min-height: 42px;
+  padding: 0 16px;
+
+  border-radius: 9px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.packing-checking-refresh {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+}
+
+.packing-checking-refresh:hover {
+  background: #f9fafb;
+}
+
+.packing-checking-home {
+  background: #111827;
+  color: #ffffff;
+  border: 1px solid #111827;
+}
+
+.packing-checking-home:hover {
+  background: #1f2937;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.packing-checking-content {
+  width: min(1450px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 28px 0 50px;
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.packing-checking-loading {
+  min-height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #6b7280;
+}
+
+.packing-checking-loading p {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+/* =========================================================
+   SPINNER
+========================================================= */
+
+.packing-spin {
+  animation: packingCheckingSpin 1s linear infinite;
+}
+
+@keyframes packingCheckingSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   ALERTS
+========================================================= */
+
+.packing-checking-alert {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.packing-checking-alert span {
+  flex: 1;
+}
+
+.packing-checking-alert button {
+  width: 30px;
+  height: 30px;
+
+  border: 0;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.packing-checking-alert.error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
+
+.packing-checking-alert.error button:hover {
+  background: #fee2e2;
+}
+
+.packing-checking-alert.success {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #047857;
+}
+
+.packing-checking-alert.success button:hover {
+  background: #d1fae5;
+}
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.packing-checking-back {
+  margin-bottom: 18px;
+
+  border: 0;
+  background: transparent;
+
+  color: #374151;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.packing-checking-back:hover {
+  color: #111827;
+}
+
+/* =========================================================
+   ORDERS CARD
+========================================================= */
+
+.packing-checking-orders-card,
+.packing-checking-customer-card,
+.packing-checking-items-card,
+.packing-checking-transport-card {
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+
+  overflow: hidden;
+}
+
+.packing-checking-section-title {
+  padding: 22px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.packing-checking-section-title h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #111827;
+}
+
+.packing-checking-section-title p {
+  margin: 6px 0 0;
+
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.packing-checking-count {
+  padding: 8px 12px;
+
+  border-radius: 999px;
+
+  background: #f3f4f6;
+  color: #374151;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.packing-checking-empty {
+  min-height: 280px;
+
+  padding: 40px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #9ca3af;
+}
+
+.packing-checking-empty h3 {
+  margin: 14px 0 6px;
+
+  color: #374151;
+  font-size: 18px;
+}
+
+.packing-checking-empty p {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   ORDER LIST
+========================================================= */
+
+.packing-checking-order-list {
+  padding: 14px;
+}
+
+.packing-checking-order-card {
+  width: 100%;
+
+  padding: 16px;
+
+  margin-bottom: 10px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+
+  align-items: center;
+
+  gap: 14px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.packing-checking-order-card:last-child {
+  margin-bottom: 0;
+}
+
+.packing-checking-order-card:hover {
+  border-color: #cbd5e1;
+
+  box-shadow: 0 5px 16px rgba(15, 23, 42, 0.07);
+
+  transform: translateY(-1px);
+}
+
+.packing-checking-order-icon {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 11px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.packing-checking-order-main {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.packing-checking-order-main strong {
+  color: #111827;
+  font-size: 15px;
+}
+
+.packing-checking-order-main span {
+  color: #374151;
+  font-size: 14px;
+}
+
+.packing-checking-order-main small {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.packing-checking-order-status {
+  min-width: 120px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.packing-checking-order-status span {
+  padding: 6px 9px;
+
+  border-radius: 999px;
+
+  background: #fef3c7;
+  color: #92400e;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.packing-checking-order-status small {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+/* =========================================================
+   ORDER INFO GRID
+========================================================= */
+
+.packing-checking-info-grid {
+  margin-bottom: 18px;
+
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+.packing-checking-info-card {
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.packing-checking-info-card span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #6b7280;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.packing-checking-info-card strong {
+  display: block;
+
+  color: #111827;
+
+  font-size: 17px;
+}
+
+/* =========================================================
+   CARD HEADING
+========================================================= */
+
+.packing-checking-card-heading {
+  padding: 20px 22px;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.packing-checking-card-heading h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 19px;
+}
+
+.packing-checking-card-heading p {
+  margin: 5px 0 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   CUSTOMER DETAILS
+========================================================= */
+
+.packing-checking-customer-card {
+  margin-bottom: 18px;
+}
+
+.packing-checking-customer-grid {
+  padding: 20px 22px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.packing-checking-customer-grid > div {
+  min-width: 0;
+}
+
+.packing-checking-customer-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+.packing-checking-customer-grid span,
+.packing-checking-transport-grid span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #6b7280;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.packing-checking-customer-grid strong,
+.packing-checking-transport-grid strong {
+  display: block;
+
+  color: #111827;
+
+  font-size: 14px;
+
+  word-break: break-word;
+}
+
+/* =========================================================
+   ITEMS CARD
+========================================================= */
+
+.packing-checking-items-card {
+  margin-bottom: 18px;
+}
+
+.packing-checking-summary {
+  padding: 7px 11px;
+
+  background: #f3f4f6;
+
+  border-radius: 999px;
+
+  color: #374151;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.packing-checking-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.packing-checking-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 1000px;
+}
+
+.packing-checking-table th {
+  padding: 13px 12px;
+
+  background: #f8fafc;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  color: #6b7280;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  text-align: left;
+
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.packing-checking-table td {
+  padding: 15px 12px;
+
+  border-bottom: 1px solid #eef0f3;
+
+  color: #374151;
+
+  font-size: 13px;
+
+  vertical-align: middle;
+}
+
+.packing-checking-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.packing-checking-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.packing-checking-product-name {
+  max-width: 250px;
+
+  color: #111827;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+.packing-checking-picked-value {
+  display: inline-flex;
+
+  min-width: 38px;
+
+  justify-content: center;
+
+  padding: 5px 8px;
+
+  border-radius: 6px;
+
+  background: #f3f4f6;
+
+  color: #374151;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   QUANTITY INPUT
+========================================================= */
+
+.packing-checking-quantity-input {
+  width: 90px;
+  height: 40px;
+
+  padding: 0 10px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.packing-checking-quantity-input:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.packing-checking-quantity-input.match {
+  border-color: #10b981;
+
+  background: #ecfdf5;
+
+  color: #047857;
+}
+
+.packing-checking-quantity-input.mismatch {
+  border-color: #ef4444;
+
+  background: #fef2f2;
+
+  color: #b91c1c;
+}
+
+/* Remove browser number arrows */
+
+.packing-checking-quantity-input::-webkit-outer-spin-button,
+.packing-checking-quantity-input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.packing-checking-quantity-input[type="number"] {
+  appearance: textfield;
+}
+
+/* =========================================================
+   RESULT BADGES
+========================================================= */
+
+.packing-checking-result {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  min-width: 88px;
+
+  padding: 7px 9px;
+
+  border-radius: 7px;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.packing-checking-result.match {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.packing-checking-result.mismatch {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.packing-checking-result.pending {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+/* =========================================================
+   VALIDATION
+========================================================= */
+
+.packing-checking-validation {
+  padding: 18px 22px;
+
+  border-top: 1px solid #e5e7eb;
+}
+
+.packing-checking-validation-success,
+.packing-checking-validation-error,
+.packing-checking-validation-warning {
+  padding: 14px 16px;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.packing-checking-validation-success {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #047857;
+}
+
+.packing-checking-validation-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
+
+.packing-checking-validation-warning {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e;
+}
+
+.packing-checking-validation-success div,
+.packing-checking-validation-error div,
+.packing-checking-validation-warning div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.packing-checking-validation-success strong,
+.packing-checking-validation-error strong,
+.packing-checking-validation-warning strong {
+  font-size: 13px;
+}
+
+.packing-checking-validation-success span,
+.packing-checking-validation-error span,
+.packing-checking-validation-warning span {
+  font-size: 12px;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.packing-checking-actions {
+  padding: 18px 22px;
+
+  border-top: 1px solid #e5e7eb;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.packing-checking-save-button {
+  min-height: 44px;
+
+  padding: 0 20px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: #111827;
+  color: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.packing-checking-save-button:hover:not(:disabled) {
+  background: #1f2937;
+
+  transform: translateY(-1px);
+}
+
+.packing-checking-save-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   TRANSPORT INFORMATION
+========================================================= */
+
+.packing-checking-transport-card {
+  margin-bottom: 18px;
+}
+
+.packing-checking-card-heading > span {
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  background: #f3f4f6;
+
+  color: #6b7280;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.packing-checking-transport-grid {
+  padding: 20px 22px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.packing-checking-transport-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+  .packing-checking-info-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .packing-checking-customer-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .packing-checking-header {
+    padding: 18px 16px;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .packing-checking-header-actions {
+    width: 100%;
+  }
+
+  .packing-checking-refresh,
+  .packing-checking-home {
+    flex: 1;
+  }
+
+  .packing-checking-content {
+    width: min(100% - 24px, 1450px);
+
+    padding-top: 18px;
+  }
+
+  .packing-checking-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .packing-checking-customer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .packing-checking-customer-grid .full-width {
+    grid-column: auto;
+  }
+
+  .packing-checking-transport-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .packing-checking-transport-grid .full-width {
+    grid-column: auto;
+  }
+
+  .packing-checking-order-card {
+    grid-template-columns: 42px 1fr;
+  }
+
+  .packing-checking-order-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .packing-checking-order-status {
+    grid-column: 2;
+
+    align-items: flex-start;
+
+    min-width: 0;
+  }
+
+  .packing-checking-section-title,
+  .packing-checking-card-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .packing-checking-actions {
+    justify-content: stretch;
+  }
+
+  .packing-checking-save-button {
+    width: 100%;
+  }
+}

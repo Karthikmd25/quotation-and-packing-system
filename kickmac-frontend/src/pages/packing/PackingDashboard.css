@@ -1,0 +1,990 @@
+* {
+  box-sizing: border-box;
+}
+
+.packing-dashboard-page {
+  min-height: 100vh;
+  background: #f4f5f7;
+  color: #171717;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.packing-dashboard-header {
+  min-height: 145px;
+  padding: 28px 42px;
+
+  background: #111111;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 4px solid #ffb400;
+}
+
+.packing-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.packing-brand {
+  color: #ffb400;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  letter-spacing: 7px;
+
+  margin-bottom: 7px;
+}
+
+.packing-dashboard-header h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.packing-header-line {
+  width: 75px;
+  height: 3px;
+
+  margin-top: 13px;
+
+  background: #ffb400;
+}
+
+.packing-home-button {
+  min-height: 42px;
+
+  padding: 0 17px;
+
+  border: 1px solid #666666;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.packing-home-button:hover {
+  background: #ffffff;
+  color: #111111;
+  border-color: #ffffff;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.packing-dashboard-content {
+  width: min(1100px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  padding: 35px 0 60px;
+}
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.packing-welcome-card {
+  position: relative;
+
+  padding: 25px 28px 22px;
+
+  margin-bottom: 32px;
+
+  background: #ffffff;
+
+  border-radius: 14px;
+
+  border: 1px solid #e4e4e4;
+
+  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.06);
+}
+
+.packing-section-line {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin-bottom: 18px;
+}
+
+.packing-section-line span:first-child {
+  width: 45px;
+  height: 3px;
+
+  background: #ffb400;
+}
+
+.packing-section-line span:last-child {
+  width: 15px;
+  height: 3px;
+
+  background: #111111;
+}
+
+.packing-welcome-content {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+}
+
+.packing-welcome-icon {
+  width: 54px;
+  height: 54px;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background: #fff4d6;
+
+  color: #e39a00;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.packing-welcome-card h2 {
+  margin: 0 0 7px;
+
+  color: #202020;
+
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.packing-welcome-card p {
+  margin: 0;
+
+  color: #707070;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.packing-welcome-bottom-line {
+  height: 1px;
+
+  margin-top: 21px;
+
+  background: #eeeeee;
+}
+
+/* =========================================================
+   ORDERS SECTION
+========================================================= */
+
+.packing-orders-section {
+  width: 100%;
+}
+
+.packing-orders-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.packing-heading-label {
+  margin-bottom: 5px;
+
+  color: #d68d00;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.packing-orders-heading h2 {
+  margin: 0 0 6px;
+
+  color: #171717;
+
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.packing-orders-heading p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   REFRESH
+========================================================= */
+
+.packing-dashboard-refresh {
+  min-height: 40px;
+
+  padding: 0 15px;
+
+  border: 1px solid #d2d2d2;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #222222;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.packing-dashboard-refresh:hover {
+  background: #111111;
+  color: #ffffff;
+
+  border-color: #111111;
+}
+
+.packing-dashboard-refresh:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   SECTION DIVIDER
+========================================================= */
+
+.packing-section-divider {
+  width: 100%;
+
+  margin: 18px 0 20px;
+
+  display: flex;
+  align-items: center;
+}
+
+.packing-section-divider span {
+  width: 100%;
+  height: 1px;
+
+  background: #dddddd;
+
+  position: relative;
+}
+
+.packing-section-divider span::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: -1px;
+
+  width: 75px;
+  height: 3px;
+
+  background: #ffb400;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.packing-search-wrapper {
+  width: 100%;
+  height: 52px;
+
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+
+  background: #ffffff;
+
+  border: 2px solid #dedede;
+  border-radius: 10px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.packing-search-wrapper:focus-within {
+  border-color: #ffb400;
+
+  box-shadow: 0 0 0 3px rgba(255, 180, 0, 0.10);
+}
+
+.packing-search-icon {
+  flex-shrink: 0;
+
+  color: #858585;
+}
+
+.packing-search-wrapper input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 12px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #222222;
+
+  font-size: 14px;
+}
+
+.packing-search-wrapper input::placeholder {
+  color: #999999;
+}
+
+.packing-search-clear {
+  width: 31px;
+  height: 31px;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #eeeeee;
+  color: #555555;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.packing-search-clear:hover {
+  background: #dddddd;
+}
+
+/* =========================================================
+   SEARCH COUNT
+========================================================= */
+
+.packing-search-count {
+  margin: 15px 0;
+
+  color: #777777;
+
+  font-size: 12px;
+}
+
+.packing-search-count strong {
+  color: #222222;
+
+  font-weight: 900;
+}
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.packing-dashboard-error {
+  margin: 15px 0;
+
+  padding: 13px 15px;
+
+  border: 1px solid #efb8b8;
+  border-radius: 8px;
+
+  background: #fff0f0;
+  color: #a02020;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   ORDERS GRID
+========================================================= */
+
+.packing-orders-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+/* =========================================================
+   ORDER CARD
+========================================================= */
+
+.packing-order-card {
+  padding: 21px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e1e1;
+  border-radius: 13px;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.055);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.packing-order-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #cccccc;
+
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+}
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.packing-order-card-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 15px;
+}
+
+.packing-order-number {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  min-width: 0;
+}
+
+.packing-order-icon {
+  width: 37px;
+  height: 37px;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: #fff4d6;
+
+  color: #e59b00;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.packing-order-number strong {
+  color: #202020;
+
+  font-size: 17px;
+
+  font-weight: 900;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.packing-order-status {
+  min-height: 27px;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.5px;
+
+  white-space: nowrap;
+}
+
+.packing-order-status-ready {
+  background: #fff0ce;
+  color: #8b5a00;
+}
+
+.packing-order-status-picked {
+  background: #e5f0ff;
+  color: #245d9f;
+}
+
+.packing-order-status-checking {
+  background: #eee7ff;
+  color: #6542a4;
+}
+
+.packing-order-status-packing {
+  background: #fff0d6;
+  color: #985d00;
+}
+
+.packing-order-status-packed {
+  background: #e0f6e7;
+  color: #197239;
+}
+
+.packing-order-status-dispatched {
+  background: #d9f4e2;
+  color: #176b31;
+}
+
+.packing-order-status-delivered {
+  background: #dff5f4;
+  color: #126b66;
+}
+
+.packing-order-status-cancelled {
+  background: #ffe1e1;
+  color: #a02020;
+}
+
+/* =========================================================
+   CARD LINE
+========================================================= */
+
+.packing-card-line {
+  width: 100%;
+
+  height: 1px;
+
+  margin-bottom: 4px;
+
+  background: #eeeeee;
+}
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.packing-order-details {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.packing-order-detail-row {
+  min-height: 39px;
+
+  display: grid;
+
+  grid-template-columns: 90px minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 10px;
+
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.packing-order-detail-row:last-child {
+  border-bottom: none;
+}
+
+.packing-order-detail-label {
+  color: #898989;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+}
+
+.packing-order-detail-value {
+  min-width: 0;
+
+  color: #292929;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   TRANSPORT SLIP
+========================================================= */
+
+.packing-slip-status {
+  min-height: 35px;
+
+  margin-top: 8px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+.packing-slip-status span {
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+
+  font-weight: 900;
+}
+
+.packing-slip-status.uploaded {
+  color: #16803a;
+}
+
+.packing-slip-status.uploaded span {
+  background: #dff6e6;
+  color: #16803a;
+}
+
+.packing-slip-status.not-uploaded {
+  color: #c62828;
+}
+
+.packing-slip-status.not-uploaded span {
+  background: #ffe1e1;
+  color: #c62828;
+}
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.packing-order-card-footer {
+  padding-top: 14px;
+
+  border-top: 1px solid #eeeeee;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+.packing-order-items {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #777777;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.packing-order-items strong {
+  color: #222222;
+
+  font-size: 14px;
+
+  font-weight: 900;
+}
+
+/* =========================================================
+   OPEN PACKING
+========================================================= */
+
+.packing-open-btn {
+  min-height: 38px;
+
+  padding: 8px 14px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #111111;
+
+  color: #ffffff;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.packing-open-btn:hover {
+  background: #2b2b2b;
+
+  transform: translateX(2px);
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.packing-empty-state {
+  min-height: 240px;
+
+  padding: 35px;
+
+  border: 1px dashed #d2d2d2;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.packing-empty-state svg {
+  margin-bottom: 12px;
+
+  color: #ffb400;
+}
+
+.packing-empty-state-title {
+  margin: 0;
+
+  color: #333333;
+
+  font-size: 17px;
+
+  font-weight: 900;
+}
+
+.packing-empty-state-text {
+  margin: 7px 0 0;
+
+  color: #888888;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   CLEAR SEARCH
+========================================================= */
+
+.packing-clear-search-button {
+  margin-top: 15px;
+
+  padding: 9px 15px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #111111;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.packing-clear-search-button:hover {
+  background: #333333;
+}
+
+/* =========================================================
+   SPINNER
+========================================================= */
+
+.packing-spin {
+  animation: packingSpin 0.8s linear infinite;
+}
+
+@keyframes packingSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .packing-orders-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .packing-dashboard-header {
+    padding: 23px 18px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+  }
+
+  .packing-dashboard-header h1 {
+    font-size: 24px;
+  }
+
+  .packing-home-button {
+    width: 100%;
+  }
+
+  .packing-dashboard-content {
+    width: calc(100% - 24px);
+
+    padding-top: 22px;
+  }
+
+  .packing-welcome-card {
+    padding: 21px;
+  }
+
+  .packing-welcome-content {
+    align-items: flex-start;
+  }
+
+  .packing-welcome-card h2 {
+    font-size: 19px;
+  }
+
+  .packing-orders-heading {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .packing-dashboard-refresh {
+    width: 100%;
+  }
+
+  .packing-order-card {
+    padding: 18px;
+  }
+
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .packing-dashboard-content {
+    width: calc(100% - 18px);
+  }
+
+  .packing-order-card-top {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .packing-order-status {
+    align-self: flex-start;
+  }
+
+  .packing-order-card-footer {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .packing-open-btn {
+    width: 100%;
+  }
+
+  .packing-order-detail-row {
+    grid-template-columns: 78px minmax(0, 1fr);
+  }
+
+}

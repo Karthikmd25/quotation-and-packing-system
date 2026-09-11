@@ -1,0 +1,1263 @@
+
+/* =========================================================
+   QUOTATION PAGE
+========================================================= */
+
+.quotation-page {
+  min-height: 100vh;
+  background: #f3f4f6;
+  color: #111;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.quotation-header {
+  max-width: 1100px;
+  margin: auto;
+  padding: 35px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.quotation-brand {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+.quotation-section {
+  color: #888;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-top: 4px;
+}
+
+.quotation-heading {
+  text-align: right;
+}
+
+.quotation-label {
+  color: #e9002b;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.quotation-heading h1 {
+  font-size: 32px;
+  margin: 10px 0 5px;
+}
+
+.quotation-heading p {
+  color: #777;
+  margin: 0;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.quotation-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 0 40px;
+}
+
+
+/* =========================================================
+   QUOTATION NUMBER
+========================================================= */
+
+.quotation-number-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin-bottom: 15px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quotation-number-card span {
+  display: block;
+  color: #888;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.quotation-number-card strong {
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   SECTION CARD
+========================================================= */
+
+.quotation-section-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.section-number {
+  width: 27px;
+  height: 27px;
+
+  background: #111827;
+  color: #fff;
+
+  border-radius: 7px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.section-heading p {
+  margin: 3px 0 0;
+  color: #999;
+  font-size: 12px;
+}
+
+.item-count {
+  margin-left: auto;
+
+  background: #f1f2f4;
+  padding: 7px 13px;
+
+  border-radius: 20px;
+
+  color: #777;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   GLOBAL INPUTS
+========================================================= */
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+input,
+select {
+  width: 100%;
+  height: 43px;
+
+  border: 1px solid #d5d9df;
+  border-radius: 7px;
+
+  padding: 0 11px;
+
+  background: #fff;
+  color: #111;
+
+  outline: none;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+  border-color: #111;
+}
+
+
+/* =========================================================
+   CUSTOMER SEARCH
+========================================================= */
+
+.search-box {
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #d5d9df;
+  border-radius: 8px;
+
+  height: 43px;
+  padding: 0 12px;
+
+  background: #fff;
+}
+
+.search-box span {
+  margin-right: 10px;
+}
+
+.search-box input {
+  border: none;
+  padding: 0;
+  height: 40px;
+}
+
+.customer-loading {
+  padding: 12px 15px;
+  color: #666;
+  font-size: 14px;
+}
+
+.customer-results {
+  margin-top: 8px;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  overflow: hidden;
+  background: #fff;
+}
+
+.customer-result {
+  width: 100%;
+
+  border: none;
+  border-bottom: 1px solid #eee;
+
+  background: #fff;
+
+  padding: 14px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.customer-result:last-child {
+  border-bottom: none;
+}
+
+.customer-result:hover {
+  background: #f8f8f8;
+}
+
+.customer-result div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.customer-result strong {
+  color: #111;
+}
+
+.customer-result span {
+  color: #777;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   SELECTED CUSTOMER
+========================================================= */
+
+.selected-customer {
+  margin-top: 12px;
+
+  padding: 16px;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  background: #fafafa;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selected-customer strong {
+  font-size: 16px;
+  color: #111;
+}
+
+.selected-customer p {
+  margin: 5px 0 0;
+
+  color: #777;
+
+  font-size: 13px;
+}
+
+.selected-customer button {
+  border: none;
+
+  background: #111;
+  color: #fff;
+
+  padding: 8px 14px;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+  font-weight: 700;
+
+  transition: background 0.2s ease;
+}
+
+.selected-customer button:hover {
+  background: #333;
+}
+
+
+/* =========================================================
+   DEMO CUSTOMER RESULT
+========================================================= */
+
+.customer-demo-result {
+  margin-top: 10px;
+
+  padding: 12px;
+
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customer-demo-result button {
+  background: #111827;
+  color: #fff;
+
+  border: none;
+  border-radius: 6px;
+
+  padding: 8px 13px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   ADD CUSTOMER
+========================================================= */
+
+.add-customer-button {
+  margin-top: 14px;
+
+  border: none;
+  background: transparent;
+
+  color: #e6002d;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  padding: 5px 0;
+}
+
+.add-customer-button:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   CUSTOMER FORM
+========================================================= */
+
+.customer-form {
+  margin-top: 18px;
+
+  padding: 20px;
+
+  border: 1px solid #ddd;
+  border-radius: 12px;
+
+  background: #fafafa;
+}
+
+.customer-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.customer-form-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.customer-form-header button {
+  border: none;
+  background: transparent;
+
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+.customer-form-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 15px;
+}
+
+.customer-form .full-width {
+  grid-column: 1 / -1;
+}
+
+.customer-form input,
+.customer-form textarea {
+  width: 100%;
+
+  border: 1px solid #ccc;
+  border-radius: 7px;
+
+  padding: 11px 12px;
+
+  font-size: 14px;
+
+  outline: none;
+
+  box-sizing: border-box;
+}
+
+.customer-form input:focus,
+.customer-form textarea:focus {
+  border-color: #111;
+}
+
+.customer-form textarea {
+  resize: vertical;
+}
+
+.customer-form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.customer-cancel-button {
+  border: 1px solid #ccc;
+
+  background: #fff;
+
+  padding: 11px 20px;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+}
+
+.customer-save-button {
+  border: none;
+
+  background: #111;
+  color: #fff;
+
+  padding: 11px 22px;
+
+  border-radius: 7px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.customer-save-button:hover {
+  background: #333;
+}
+
+.customer-save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   PRODUCT SEARCH
+========================================================= */
+
+.product-search-section {
+  margin-bottom: 20px;
+}
+
+.product-search-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border: 1px solid #d5d9df;
+  border-radius: 8px;
+
+  background: #fff;
+
+  height: 45px;
+
+  padding: 0 12px;
+}
+
+.product-search-box input {
+  border: none;
+
+  height: 40px;
+
+  padding: 0;
+}
+
+.product-search-results {
+  margin-top: 8px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 10px;
+
+  background: #fff;
+
+  overflow: hidden;
+}
+
+.product-search-result {
+  width: 100%;
+
+  border: none;
+  border-bottom: 1px solid #eee;
+
+  background: #fff;
+
+  padding: 13px 15px;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.product-search-result:last-child {
+  border-bottom: none;
+}
+
+.product-search-result:hover {
+  background: #f8f8f8;
+}
+
+.product-search-result strong {
+  display: block;
+
+  font-size: 13px;
+
+  color: #111;
+}
+
+.product-search-result span {
+  color: #777;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   PRODUCT TABLE
+========================================================= */
+
+.product-table-wrapper {
+  overflow-x: auto;
+}
+
+.product-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 950px;
+}
+
+.product-table thead {
+  background: #111;
+  color: #fff;
+}
+
+.product-table th {
+  text-align: left;
+
+  padding: 11px 8px;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+}
+
+.product-table td {
+  padding: 8px;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.product-table input,
+.product-table select {
+  height: 36px;
+
+  font-size: 12px;
+}
+
+.item-total {
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   DELETE ITEM
+========================================================= */
+
+.delete-item {
+  border: none;
+
+  background: #fee2e2;
+  color: #dc2626;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  transition: background 0.2s ease;
+}
+
+.delete-item:hover {
+  background: #fecaca;
+}
+
+.delete-item:disabled {
+  opacity: 0.3;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ADD ITEM BUTTON
+========================================================= */
+
+.add-item-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 15px;
+
+  padding: 11px 20px;
+
+  background: #dc2626;
+  color: #fff;
+
+  border: 1px solid #dc2626;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-item-button:hover {
+  background: #b91c1c;
+
+  border-color: #b91c1c;
+
+  box-shadow: 0 5px 14px rgba(220, 38, 38, 0.25);
+
+  transform: translateY(-1px);
+}
+
+.add-item-button:active {
+  background: #991b1b;
+
+  transform: translateY(0);
+}
+
+.add-item-button:disabled {
+  background: #fca5a5;
+
+  border-color: #fca5a5;
+
+  color: #fff;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   ADD NEW PRODUCT FORM
+========================================================= */
+
+.add-product-form {
+  margin-top: 20px;
+
+  padding: 20px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 12px;
+
+  background: #fafafa;
+}
+
+.add-product-form h3 {
+  margin: 0 0 18px;
+
+  font-size: 18px;
+}
+
+.add-product-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 15px;
+}
+
+.add-product-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+.add-product-form input,
+.add-product-form select {
+  height: 43px;
+}
+
+.add-product-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.add-product-cancel {
+  border: 1px solid #ccc;
+
+  background: #fff;
+
+  color: #333;
+
+  padding: 10px 18px;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+}
+
+.add-product-save {
+  border: none;
+
+  background: #dc2626;
+
+  color: #fff;
+
+  padding: 10px 20px;
+
+  border-radius: 7px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.add-product-save:hover {
+  background: #b91c1c;
+}
+
+.add-product-save:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   CHARGES
+========================================================= */
+
+.charges-layout {
+  display: grid;
+
+  grid-template-columns: 1fr 430px;
+
+  gap: 30px;
+}
+
+.charge-note h3 {
+  margin-top: 0;
+}
+
+.charge-note p {
+  color: #888;
+
+  max-width: 350px;
+
+  line-height: 1.6;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   TOTALS BOX
+========================================================= */
+
+.totals-box {
+  border: 1px solid #ddd;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  background: #fff;
+}
+
+.total-row {
+  min-height: 48px;
+
+  padding: 8px 12px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  border-bottom: 1px solid #eee;
+
+  font-size: 13px;
+
+  box-sizing: border-box;
+}
+
+.total-row > strong {
+  font-weight: 900;
+}
+
+.money-input {
+  width: 135px;
+
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #ccd1d8;
+
+  border-radius: 6px;
+
+  overflow: hidden;
+
+  background: #fff;
+}
+
+.money-input span {
+  padding-left: 10px;
+
+  color: #777;
+}
+
+.money-input input {
+  border: none;
+
+  height: 32px;
+
+  text-align: right;
+
+  padding-right: 8px;
+}
+
+.after-discount {
+  color: #555;
+}
+
+
+/* =========================================================
+   GRAND TOTAL
+========================================================= */
+
+.grand-total {
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: space-between !important;
+
+  width: 100% !important;
+
+  min-height: 58px !important;
+
+  padding: 16px 14px !important;
+
+  box-sizing: border-box;
+
+  background: #f0003c !important;
+
+  color: #fff !important;
+
+  border-radius: 0 0 10px 10px !important;
+}
+
+.grand-total span {
+  display: block !important;
+
+  color: #fff !important;
+
+  font-size: 18px !important;
+
+  font-weight: 700 !important;
+
+  visibility: visible !important;
+
+  opacity: 1 !important;
+}
+
+.grand-total strong {
+  display: block !important;
+
+  color: #fff !important;
+
+  font-size: 20px !important;
+
+  font-weight: 800 !important;
+
+  text-align: right !important;
+
+  white-space: nowrap !important;
+
+  visibility: visible !important;
+
+  opacity: 1 !important;
+
+  margin-left: auto !important;
+}
+
+
+/* =========================================================
+   PAYMENT / TRANSPORT
+========================================================= */
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+.form-group select {
+  height: 45px;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.quotation-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 5px;
+}
+
+.cancel-button {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 90px;
+
+  height: 43px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  color: #333;
+
+  background: #fff;
+
+  font-weight: 700;
+
+  transition: background 0.2s ease;
+}
+
+.cancel-button:hover {
+  background: #f3f4f6;
+}
+
+.save-button {
+  min-width: 155px;
+
+  height: 43px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #e9002b;
+
+  color: #fff;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.save-button:hover {
+  background: #c70025;
+
+  transform: translateY(-1px);
+}
+
+.save-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.quotation-error {
+  margin-bottom: 15px;
+
+  padding: 12px 15px;
+
+  border: 1px solid #fecaca;
+
+  border-radius: 8px;
+
+  background: #fef2f2;
+
+  color: #b91c1c;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.quotation-success {
+  margin-bottom: 15px;
+
+  padding: 12px 15px;
+
+  border: 1px solid #bbf7d0;
+
+  border-radius: 8px;
+
+  background: #f0fdf4;
+
+  color: #15803d;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+  .quotation-header {
+    padding: 25px 20px 15px;
+
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .quotation-heading {
+    text-align: left;
+  }
+
+  .quotation-heading h1 {
+    font-size: 26px;
+  }
+
+  .quotation-container {
+    padding: 0 15px 30px;
+  }
+
+  .quotation-number-card {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .charges-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-form .full-width {
+    grid-column: auto;
+  }
+
+  .add-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .add-product-grid .full-width {
+    grid-column: auto;
+  }
+
+  .selected-customer {
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+  .quotation-brand {
+    font-size: 23px;
+
+    letter-spacing: 3px;
+  }
+
+  .quotation-heading h1 {
+    font-size: 23px;
+  }
+
+  .quotation-section-card {
+    padding: 15px;
+  }
+
+  .section-heading {
+    gap: 9px;
+  }
+
+  .section-heading h2 {
+    font-size: 14px;
+  }
+
+  .item-count {
+    font-size: 11px;
+
+    padding: 6px 9px;
+  }
+
+  .quotation-actions {
+    flex-direction: column;
+  }
+
+  .cancel-button,
+  .save-button {
+    width: 100%;
+  }
+
+  .selected-customer {
+    flex-direction: column;
+  }
+
+  .selected-customer button {
+    width: 100%;
+  }
+}
